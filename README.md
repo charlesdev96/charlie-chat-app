@@ -45,12 +45,13 @@ B. File Upload Link.
 
 C. User information (requires authentication).
   1. Update user account/profile: (PATCH) URL/user/update-account
-  2. Delete user account: These have two phases
-     (a) Get user account: (GET) URL/user/delete-account
-     (b) Confirm account to be deleted: (DELETE) URL/user/confirm-account
-  3. Get current user profile: (GET) URL/user/display-account
-  4. Get single user: (GET) URL/user/get-single-user/userId
-  5. Search for user using username or phone number(also allow partial search): (GET) URL/user/search-user?username or URL/user/search-user?phonenumber
+  2. Delete user account: These have two phases:
+     (a). Get user account: (GET) URL/user/delete-account
+     
+     (b). Confirm account to be deleted: (DELETE) URL/user/confirm-account
+  4. Get current user profile: (GET) URL/user/display-account
+  5. Get single user: (GET) URL/user/get-single-user/userId
+  6. Search for user using username or phone number(also allow partial search): (GET) URL/user/search-user?username or URL/user/search-user?phonenumber
 
 D. User connections(Followings) (requires authentication).
   1. Follow a user: (PATCH) URL/user/follow-user/userId
