@@ -31,43 +31,47 @@ const jsonData = pm.response.json()
 pm.globals.set("accessToken", jsonData.token)
 
 URL = http://localhost:5000/api/v1
+userId: the id of the user
+commentId: the id of the comment
+postId: the id of the post
+
 
 A. User Registration and Login:
   1. Creates a new user account:(POST) URL/auth/register.
-  2. User Login: URL/auth/login
+  2. User Login: (POST) URL/auth/login
 
-B. File Upload Link (requires authentication).
-  Upload files(videos, image, pdf etc): URL/file-upload
+B. File Upload Link.
+  Upload files(videos, image, pdf etc): (POST) URL/file-upload
 
 C. User information (requires authentication).
-  1. Update user account/profile: URL/user/update-account
+  1. Update user account/profile: (PATCH) URL/user/update-account
   2. Delete user account: These have two phases
-     (a) Get user account: URL/user/delete-account
-     (b) Confirm account to be deleted: URL/user/confirm-account
-  3. Get current user profile: URL/user/display-account
-  4. Get single user: URL/user/get-single-user/userId
-  5. Search for user using username or phone number(also allow partial search): URL/user/search-user?username or URL/user/search-user?phonenumber
+     (a) Get user account: (GET) URL/user/delete-account
+     (b) Confirm account to be deleted: (DELETE) URL/user/confirm-account
+  3. Get current user profile: (GET) URL/user/display-account
+  4. Get single user: (GET) URL/user/get-single-user/userId
+  5. Search for user using username or phone number(also allow partial search): (GET) URL/user/search-user?username or URL/user/search-user?phonenumber
 
 D. User connections(Followings) (requires authentication).
-  1. Follow a user: URL/user/follow-user/userId
-  2. Unfollow a user: URL/user/unfollow-user/userId
-  3. Get current user followers: URL/user/get-followers
-  4. Get current user followings: URL/user/get-followings
+  1. Follow a user: (PATCH) URL/user/follow-user/userId
+  2. Unfollow a user: (PATCH) URL/user/unfollow-user/userId
+  3. Get current user followers: (GET) URL/user/get-followers
+  4. Get current user followings: (GET) URL/user/get-followings
 
 E. User Posts (requires authentication).
-  1. Create Post: URL/post/create-post
-  2. Update Post: URL/post/update-post/postId
-  3. Delete Post: URL/post/delete-post/postId
-  4. Get single post: URL/post/get-post/postId
-  5. Like a post: URL/post/like-post/postId
-  6. Dislike a post: URL/post/unlike-post/postId
-  7. Get Time line post(Like to get all posts): URL/post/time-line-post
-  8. Search for posts using desc: URL/post/search-post?desc=search
+  1. Create Post: (POST) URL/post/create-post
+  2. Update Post: (PATCH) URL/post/update-post/postId
+  3. Delete Post: (DELETE) URL/post/delete-post/postId
+  4. Get single post: (GET) URL/post/get-post/postId
+  5. Like a post: (PATCH) URL/post/like-post/postId
+  6. Dislike a post: (PATCH) URL/post/unlike-post/postId
+  7. Get Time line post(Like to get all posts): (GET) URL/post/time-line-post
+  8. Search for posts using desc: (GET) URL/post/search-post?desc=search
 
 F. Comments on Posts
-  1. Create comment on a post: URL/comment/create-comment/postId
-  2. Update comment: URL/comment/update-comment/commentId
-  3. Delete comment: URL/comment/delete-comment/commentId
+  1. Create comment on a post: (POST) URL/comment/create-comment/postId
+  2. Update comment: (PATCH) URL/comment/update-comment/commentId
+  3. Delete comment: (DELETE) URL/comment/delete-comment/commentId
 
 NOTE:
 
