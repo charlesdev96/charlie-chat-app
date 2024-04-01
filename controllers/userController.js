@@ -8,6 +8,28 @@ const isEmailValid = (email) => {
   return emailRegex.test(email);
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    const userId = req.user.userId;
+    //get all users except the current user
+    const users = await User.find({ _id: { $ne: userId.toString() } }).select(
+      "username profilePic desc relationship from"
+    );
+    res.status(StatusCodes.OK).json({
+      success: true,
+      message: "Here are the users you requested.",
+      data: users,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Unable to get all users",
+      error: error,
+    });
+  }
+};
+
 const userProfile = async (req, res) => {
   try {
     const userId = req.user.userId;
@@ -430,6 +452,7 @@ const searchUser = async (req, res) => {
 };
 
 module.exports = {
+  getAllUsers,
   userProfile,
   updateAccount,
   deleteAccount,

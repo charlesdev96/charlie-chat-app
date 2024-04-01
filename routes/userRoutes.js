@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
   userProfile,
+  getAllUsers,
   updateAccount,
   deleteAccount,
   confirmDeleteAccount,
@@ -17,6 +18,9 @@ router.get("/display-account", authenticateUser, userProfile);
 
 //search user routes
 router.get("/search-user", authenticateUser, searchUser);
+
+//get all users
+router.get("/get-all-users", authenticateUser, getAllUsers);
 
 //delete account
 router.get("/delete-account", authenticateUser, deleteAccount);

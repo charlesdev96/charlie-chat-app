@@ -1,7 +1,8 @@
 require("dotenv").config();
 require("express-async-errors");
 const express = require("express");
-const app = express();
+// const app = express();
+const { app, server } = require("./sockets/socket");
 
 const helmet = require("helmet");
 const cors = require("cors");
@@ -23,7 +24,7 @@ const port = 5000;
 
 const start = async () => {
   await connectDB();
-  app.listen(port, () => {
+  server.listen(port, () => {
     console.log(`Server running on port ${port}...`);
   });
 };
