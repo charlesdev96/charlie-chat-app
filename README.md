@@ -31,11 +31,18 @@ const jsonData = pm.response.json()
 pm.globals.set("accessToken", jsonData.token)
 
 URL = http://localhost:5000/api/v1
+
 userId: the id of the user
+
 commentId: the id of the comment
+
 postId: the id of the post
+
 receiverId: id of the message receiver
+
 senderId: id of the user sending the message
+
+messageId: id of the sent message
 
 
 A. User Registration and Login:
