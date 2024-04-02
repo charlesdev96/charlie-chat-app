@@ -83,6 +83,8 @@ Postman link: https://www.postman.com/charles4christ/workspace/my-projects/colle
 
 This will provide you with insights into how the endpoints were utilized in Postman, along with templates that you can use for reference or testing purposes.
 
+**In the likePost endpoint, the first call will register a like for a post. Subsequent call to the same endpoint on the same post will reverse the effect of the initial call, removing the like. The same principle applies to the dislikePost endpoint.**
+
 Future Enhancements:
 
 1. Real-time Chat: Integration with a real-time messaging service for instant communication.
