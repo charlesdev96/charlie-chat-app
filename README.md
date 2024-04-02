@@ -34,6 +34,8 @@ URL = http://localhost:5000/api/v1
 userId: the id of the user
 commentId: the id of the comment
 postId: the id of the post
+receiverId: id of the message receiver
+senderId: id of the user sending the message
 
 
 A. User Registration and Login:
@@ -75,6 +77,12 @@ F. Comments on Posts
   2. Update comment: (PATCH) URL/comment/update-comment/commentId
   3. Delete comment: (DELETE) URL/comment/delete-comment/commentId
 
+G. Messages/Chats between users
+   1. Send message to another user: (POST) URL/message/send-message/receiverId
+   2. Get previous conversations: (GET) URL/message/get-message/receiverId
+   3. Edit sent message: (PATCH) URL/message/edit-message/messageId
+   4. Delete message: (DELETE) URL/message/delete-message/messageId
+
 NOTE:
 
 A sample of how i called the endpoints in postman can be seen using the link below and there is an example template for each endpoint.
@@ -87,6 +95,5 @@ This will provide you with insights into how the endpoints were utilized in Post
 
 Future Enhancements:
 
-1. Real-time Chat: Integration with a real-time messaging service for instant communication.
-2. Group Chat: Enable communication within groups of users.
-3. Push Notifications: Implement push notifications to alert users about new messages and activities.
+1. Group Chat: Enable communication within groups of users.
+2. Push Notifications: Implement push notifications to alert users about new messages and activities.
