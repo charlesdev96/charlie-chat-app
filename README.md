@@ -6,7 +6,7 @@ This repository provides a robust and scalable API foundation for a real-time ch
 2. Create Posts: Share text, images, or other media content.
 3. Comment on Posts: Engage in discussions and express opinions on posts.
 4. Follow Users: Stay updated on the activities of people you're interested in.
-   
+
 Key Features:
 
 1. RESTful API: Designed for ease of integration with various frontend frameworks.
@@ -20,7 +20,7 @@ Getting Started:
 2. Install Dependencies: Run npm install in the project directory to install the required dependencies.
 3. Configure Database: Create a database connection using your preferred database technology (e.g., MongoDB) and update the configuration details in the appropriate environment variables file.
 4. Start the Server: Run npm start to start the API server.
-   
+
 API Endpoints:
 
 **NOTE**: Most API endpoints in this project require authentication. This means you'll need a token to access information about the currently logged-in user or perform actions on their behalf. Endpoints like registration and login are exempt from this requirement.
@@ -44,51 +44,57 @@ senderId: id of the user sending the message
 
 messageId: id of the sent message
 
-
 A. User Registration and Login:
-  1. Creates a new user account:(POST) URL/auth/register.
-  2. User Login: (POST) URL/auth/login
+
+1. Creates a new user account:(POST) URL/auth/register.
+2. User Login: (POST) URL/auth/login
 
 B. File Upload Link.
-  Upload files(videos, image, pdf etc): (POST) URL/file-upload
+Upload files(videos, image, pdf etc): (POST) URL/file-upload
 
 C. User information (requires authentication).
-  1. Update user account/profile: (PATCH) URL/user/update-account
-  2. Delete user account: These have two phases:
 
-     (a). Get user account: (GET) URL/user/delete-account
-     
-     (b). Confirm account to be deleted: (DELETE) URL/user/confirm-account
-  3. Get current user profile: (GET) URL/user/display-account
-  4. Get single user: (GET) URL/user/get-single-user/userId
-  5. Search for user using username or phone number(also allow partial search): (GET) URL/user/search-user?username or URL/user/search-user?phonenumber
+1. Update user account/profile: (PATCH) URL/user/update-account
+2. Delete user account: These have two phases:
+
+   (a). Get user account: (GET) URL/user/delete-account
+
+   (b). Confirm account to be deleted: (DELETE) URL/user/confirm-account
+
+3. Get current user profile: (GET) URL/user/display-account
+4. Get single user: (GET) URL/user/get-single-user/userId
+5. Search for user using username or phone number(also allow partial search): (GET) URL/user/search-user?username or URL/user/search-user?phonenumber
 
 D. User connections(Followings) (requires authentication).
-  1. Follow a user: (PATCH) URL/user/follow-user/userId
-  2. Unfollow a user: (PATCH) URL/user/unfollow-user/userId
-  3. Get current user followers: (GET) URL/user/get-followers
-  4. Get current user followings: (GET) URL/user/get-followings
+
+1. Follow a user: (PATCH) URL/user/follow-user/userId
+2. Unfollow a user: (PATCH) URL/user/unfollow-user/userId
+3. Get current user followers: (GET) URL/user/get-followers
+4. Get current user followings: (GET) URL/user/get-followings
 
 E. User Posts (requires authentication).
-  1. Create Post: (POST) URL/post/create-post
-  2. Update Post: (PATCH) URL/post/update-post/postId
-  3. Delete Post: (DELETE) URL/post/delete-post/postId
-  4. Get single post: (GET) URL/post/get-post/postId
-  5. Like a post: (PATCH) URL/post/like-post/postId
-  6. Dislike a post: (PATCH) URL/post/unlike-post/postId
-  7. Get Time line post(Like to get all posts): (GET) URL/post/time-line-post
-  8. Search for posts using desc: (GET) URL/post/search-post?desc=search
+
+1. Create Post: (POST) URL/post/create-post
+2. Update Post: (PATCH) URL/post/update-post/postId
+3. Delete Post: (DELETE) URL/post/delete-post/postId
+4. Get single post: (GET) URL/post/get-post/postId
+5. Like a post: (PATCH) URL/post/like-post/postId
+6. Dislike a post: (PATCH) URL/post/unlike-post/postId
+7. Get Time line post(Like to get all posts): (GET) URL/post/time-line-post
+8. Search for posts using desc: (GET) URL/post/search-post?desc=search
 
 F. Comments on Posts
-  1. Create comment on a post: (POST) URL/comment/create-comment/postId
-  2. Update comment: (PATCH) URL/comment/update-comment/commentId
-  3. Delete comment: (DELETE) URL/comment/delete-comment/commentId
+
+1. Create comment on a post: (POST) URL/comment/create-comment/postId
+2. Update comment: (PATCH) URL/comment/update-comment/commentId
+3. Delete comment: (DELETE) URL/comment/delete-comment/commentId
 
 G. Messages/Chats between users
-   1. Send message to another user: (POST) URL/message/send-message/receiverId
-   2. Get previous conversations: (GET) URL/message/get-message/receiverId
-   3. Edit sent message: (PATCH) URL/message/edit-message/messageId
-   4. Delete message: (DELETE) URL/message/delete-message/messageId
+
+1. Send message to another user: (POST) URL/message/send-message/receiverId
+2. Get previous conversations: (GET) URL/message/get-message/receiverId
+3. Edit sent message: (PATCH) URL/message/edit-message/messageId
+4. Delete message: (DELETE) URL/message/delete-message/messageId
 
 NOTE:
 
