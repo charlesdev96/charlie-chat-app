@@ -27,7 +27,9 @@ API Endpoints:
 If you attempt to access a protected endpoint without a valid token, you'll receive an error message prompting you to log in. For easy token management in Postman, you can leverage the "Authorization" header with the "Bearer Token" scheme. Simply copy and paste your access token, which is automatically retrieved upon successful login and stored as accessToken in your code.
 I've implemented a code that automatically copies the token from the login when "Bearer Token" is clicked, and I've named it "accessToken". You can do this by:
 in login, click on Test and paste this code:
+
 const jsonData = pm.response.json()
+
 pm.globals.set("accessToken", jsonData.token)
 
 URL = http://localhost:5000/api/v1
